@@ -2,8 +2,6 @@
 
 A modern, minimalist portfolio website built with Astro and deployed on Cloudflare Pages. Features a collection of writings, projects, and professional experiences.
 
-![alt text](image.png)
-
 ## Overview
 
 This is a personal portfolio website for Vedanshi, a Fullstack Engineer and Curious Tinkerer. The site showcases blog posts, technical notes, project work, and professional experience in a clean, fast-loading format.
