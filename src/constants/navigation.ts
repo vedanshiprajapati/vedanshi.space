@@ -21,8 +21,4 @@ export const NAVIGATION: Navigation = [
     name: "Experience",
     path: "/experience",
   },
-  {
-    name: "Projects",
-    path: "/projects",
-  },
 ];
