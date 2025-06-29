@@ -61,28 +61,6 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
       }
     </section>
 
-    <Section>
-      <div class="section-header">
-        <h2>{site.sections.blog.title}</h2>
-        <a href="/blog">{site.sections.blog.viewAllText}</a>
-      </div>
-      <ContentList>
-        {
-          latestPosts.map((post) => (
-            <article>
-              <div class="title-row">
-                <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                {post.data.publishedAt && (
-                  <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
-                )}
-              </div>
-              <p class="muted-text">{post.data.description}</p>
-            </article>
-          ))
-        }
-      </ContentList>
-    </Section>
-
     <section class="section">
       <div class="section-header">
         <h2>{site.sections.projects.title}</h2>
@@ -135,6 +113,28 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
         }
       </div>
     </section>
+
+    <Section>
+      <div class="section-header">
+        <h2>{site.sections.blog.title}</h2>
+        <a href="/blog">{site.sections.blog.viewAllText}</a>
+      </div>
+      <ContentList>
+        {
+          latestPosts.map((post) => (
+            <article>
+              <div class="title-row">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                {post.data.publishedAt && (
+                  <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+                )}
+              </div>
+              <p class="muted-text">{post.data.description}</p>
+            </article>
+          ))
+        }
+      </ContentList>
+    </Section>
   </Container>
 </BaseLayout>
 
