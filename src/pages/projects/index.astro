@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import BaseHero from "../../components/shared/BaseHero.astro";
+import Container from "../../components/ui/Container.astro";
+import ContentList from "../../components/shared/ContentList.astro";
+import ArticleCard from "../../components/ui/ArticleCard.astro";
+
+const projects = await getCollection("projects")
+
+// Optional: put featured projects first
+const sortedProjects = projects.sort((a, b) => {
+  return (b.data.featured === true ? 1 : 0) - (a.data.featured === true ? 1 : 0);
+});
+---
+
+<BaseLayout title="Projects" description="Explore the projects I've worked on.">
+  <Container>
+    <BaseHero title="Projects" description="Explore the projects I've worked on." />
+    <ContentList>
+      {
+        sortedProjects.map((proj) => (
+          <ArticleCard
+            title={proj.data.title}
+            description={proj.data.description}
+            url={proj.data.url || "#"}
+            tags={proj.data.techs || []}
+          />
+        ))
+      }
+    </ContentList>
+  </Container>
+</BaseLayout>

@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  url?: string;
+  date?: Date;
+  tags?: string[];
+  logo?: string;
+}
+
+const { title, description, url, date, tags, logo } = Astro.props;
+import { formatDate } from "../../utils/date";
+---
+
+<article>
+  <div class="title-row">
+    <div class="title-left">
+      {logo && (
+        <img src={logo} alt="logo" class="logo" />
+      )}
+      {
+        url
+          ? <a href={url}>{title}</a>
+          : <span class="title-text">{title}</span>
+      }
+    </div>
+    {date && <time datetime={date.toISOString()}>{formatDate(date)}</time>}
+  </div>
+
+  {description && <p class="muted-text">{description}</p>}
+
+  {tags && tags?.length > 0 && (
+    <div class="tags">
+      {tags.map((tag) => (
+        <span>{tag}</span>
+      ))}
+    </div>
+  )}
+</article>
+
+<style>
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .title-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .title-left a,
+  .title-text {
+    font-size: var(--text-lg);
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .title-left a:hover {
+    color: var(--link-color);
+  }
+
+  .muted-text {
+    color: var(--muted-color);
+    font-size: var(--text-sm);
+    margin-top: 0.25rem;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tags span {
+    font-size: var(--text-xs);
+    opacity: 0.5;
+  }
+</style>

@@ -1,0 +1,35 @@
+{
+  "home": {
+    "name": "Vedanshi Prajapati",
+    "title": "Fullstack Engineer & Curious Tinkerer",
+    "introduction": "I’m constantly learning and evolving. I love diving into new ideas and finding creative ways to solve problems.",
+    "sections": {
+      "blog": {
+        "title": "Writing",
+        "viewAllText": "View all posts"
+      },
+      "projects": {
+        "title": "Projects",
+        "viewAllText": "View all projects"
+      },
+      "experience": {
+        "title": "Experience",
+        "viewAllText": "View full résumé"
+      }
+    },
+    "socialLinks": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/vedanshiprajapati"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://x.com/vedanshi555"
+      },
+      {
+        "platform": "Linkedin",
+        "url": "https://www.linkedin.com/in/vedanshiprajapati/"
+      }
+    ]
+  }
+}
