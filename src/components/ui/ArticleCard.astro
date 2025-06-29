@@ -62,7 +62,11 @@ import { formatDate } from "../../utils/date";
     flex-shrink: 0;
   }
 
-  .title-left a,
+  .title-row a {
+    font-size: var(--text-lg);
+    text-decoration: none;
+    color: var(--text-color);
+  }
   .title-text {
     font-size: var(--text-lg);
     text-decoration: none;
@@ -74,13 +78,6 @@ import { formatDate } from "../../utils/date";
   .title-left a:hover {
     color: var(--link-color);
   }
-
-  .muted-text {
-    color: var(--muted-color);
-    font-size: var(--text-sm);
-    margin-top: 0.25rem;
-  }
-
   .tags {
     display: flex;
     gap: 0.75rem;
